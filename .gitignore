@@ -5,6 +5,9 @@ Thumbs.db
 # Node (para generar iconos)
 node_modules/
 
+# Build
+find-my-phone-chrome.zip
+
 # Editor
 .vscode/
 .idea/

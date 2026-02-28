@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "Localizar mi móvil",
+  "name": "Find my phone",
   "version": "1.0.0",
-  "description": "Un clic para abrir Find My Device (Android) o Find My iPhone y hacer sonar tu teléfono cuando no lo encuentras.",
+  "description": "One click to open Find My Device (Android) or Find My iPhone and locate, ring, lock, or erase your phone when you can't find it.",
   "permissions": ["storage"],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Localizar mi móvil",
+    "default_title": "Find my phone",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",

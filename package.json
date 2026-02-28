@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "description": "Extensión para localizar tu móvil",
   "scripts": {
-    "generate-icons": "node generate-icons.js"
+    "generate-icons": "node generate-icons.js",
+    "generate-store-assets": "node generate-store-assets.js",
+    "prepare-store-images": "node process-screenshots.js"
   },
   "devDependencies": {
     "sharp": "^0.33.5"

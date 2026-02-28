@@ -23,7 +23,7 @@ Extensión de navegador para localizar tu teléfono con un clic. ¿No encuentras
 
 1. Haz clic en el icono de la extensión
 2. Elige **Android** o **iPhone** según tu dispositivo
-3. Se abrirá Find My Device o iCloud Find en una nueva pestaña
+3. Se abrirá Find My Device o iCloud Find en una ventana emergente (900×700 px)
 4. Inicia sesión si es necesario
 5. Pulsa **Reproducir sonido** para hacer sonar tu teléfono
 

@@ -9,15 +9,26 @@
 <body>
   <div class="container">
     <header>
-      <h1>Localizar mi móvil</h1>
-      <p class="subtitle">¿No encuentras tu teléfono? Hazlo sonar con un clic.</p>
+      <div class="header-row">
+        <div>
+          <h1 data-i18n="title">Localizar mi móvil</h1>
+          <p class="subtitle" data-i18n="subtitle">¿No encuentras tu teléfono? Hazlo sonar con un clic.</p>
+        </div>
+        <div class="language-selector">
+          <label for="languageSelect" class="language-label" data-i18n="language">Idioma</label>
+          <select id="languageSelect" aria-label="Idioma">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
     </header>
 
     <main>
       <div id="quick-open" class="quick-open" style="display: none;">
         <button id="btn-quick" class="btn btn-quick">
           <span class="btn-icon">📍</span>
-          <span class="btn-label">Localizar ahora</span>
+          <span class="btn-label" data-i18n="locateNow">Localizar ahora</span>
         </button>
       </div>
       <div class="buttons">
@@ -36,13 +47,13 @@
       <div class="remember">
         <label>
           <input type="checkbox" id="rememberPlatform" />
-          Recordar mi plataforma
+          <span data-i18n="rememberPlatform">Recordar mi plataforma</span>
         </label>
       </div>
     </main>
 
     <footer>
-      <p class="note">Se abrirá en una nueva pestaña. Inicia sesión si es necesario.</p>
+      <p class="note" data-i18n="note">Se abrirá en una ventana emergente. Inicia sesión si es necesario.</p>
     </footer>
   </div>
   <script src="popup.js"></script>
