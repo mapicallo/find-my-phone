@@ -1,46 +1,50 @@
-# Localizar mi móvil
+# Find my phone
 
-Extensión de navegador para localizar tu teléfono con un clic. ¿No encuentras tu móvil en casa? Abre Find My Device (Android) o Find My iPhone directamente desde la barra de herramientas.
+Browser extension to locate your phone with one click. Can't find your phone? Open Find My Device (Android) or Find My iPhone directly from the toolbar.
 
-## Instalación
+## Installation
 
 ### Chrome / Edge
 
-1. Abre `chrome://extensions` (o `edge://extensions`)
-2. Activa **"Modo desarrollador"** (esquina superior derecha)
-3. Haz clic en **"Cargar descomprimida"**
-4. Selecciona la carpeta `find-my-phone`
+1. Open `chrome://extensions` (or `edge://extensions`)
+2. Enable **Developer mode** (top right)
+3. Click **Load unpacked**
+4. Select the `find-my-phone` folder
 
 ### Firefox
 
-1. Abre `about:debugging`
-2. Haz clic en **"This Firefox"**
-3. **"Load Temporary Add-on"** → selecciona el archivo `manifest.json` dentro de la carpeta
+1. Open `about:debugging`
+2. Click **This Firefox**
+3. **Load Temporary Add-on** → select the `manifest.json` file in the folder
 
-> **Nota:** En Firefox puede que necesites ajustar el manifest (Manifest V2). Chrome y Edge usan Manifest V3.
+> **Note:** Firefox may require Manifest V2 adjustments. Chrome and Edge use Manifest V3.
 
-## Uso
+## Usage
 
-1. Haz clic en el icono de la extensión
-2. Elige **Android** o **iPhone** según tu dispositivo
-3. Se abrirá Find My Device o iCloud Find en una ventana emergente (900×700 px)
-4. Inicia sesión si es necesario
-5. Pulsa **Reproducir sonido** para hacer sonar tu teléfono
+1. Click the extension icon
+2. Choose **Android** or **iPhone** according to your device
+3. Find My Device or iCloud Find will open in a popup window (900×700 px)
+4. Sign in if required
+5. Click **Play sound** to make your phone ring
 
-## Personalización
+## Customization
 
-- **Recordar plataforma:** Marca la casilla para que la próxima vez se abra directamente la opción que uses (se guarda localmente en el navegador).
+- **Remember platform:** Check the box to open your preferred option directly next time (stored locally in the browser).
 
-## Iconos
+## Icons
 
-Los iconos se generan desde el SVG incluido. Para regenerarlos:
+Icons are generated from the included SVG. To regenerate:
 
 ```bash
 npm install
 npm run generate-icons
 ```
 
-## Requisitos
+## Requirements
 
-- Android: cuenta de Google, Find My Device activado en el teléfono
-- iPhone: Apple ID, Find My iPhone activado
+- Android: Google account, Find My Device enabled on the phone
+- iPhone: Apple ID, Find My iPhone enabled
+
+## Privacy
+
+[Privacy Policy](https://mapicallo.github.io/find-my-phone/privacy.html)
