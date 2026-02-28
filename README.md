@@ -33,7 +33,12 @@ Extensión de navegador para localizar tu teléfono con un clic. ¿No encuentras
 
 ## Iconos
 
-Los iconos actuales son placeholders. Puedes reemplazarlos en la carpeta `icons/` con tus propios PNG en tamaños 16, 32, 48 y 128 píxeles.
+Los iconos se generan desde el SVG incluido. Para regenerarlos:
+
+```bash
+npm install
+npm run generate-icons
+```
 
 ## Requisitos
 
