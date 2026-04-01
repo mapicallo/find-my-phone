@@ -13,6 +13,8 @@ const TRANSLATIONS = {
     note: 'Se abrirá una pestaña en el navegador. Inicia sesión en el sitio si es necesario.',
     closeWindow: 'Cerrar',
     windowHint: 'Arrastra la barra de título para mover. Redimensiona desde cualquier borde.',
+    footerVersion: 'Versión {v}',
+    footerVersionTitle: 'Coincide con el paquete instalado (manifest.json).',
     brandFooterAria: 'AI4Context — abrir sitio web',
     brandByPrefix: 'por',
   },
@@ -25,6 +27,8 @@ const TRANSLATIONS = {
     note: 'Opens a tab in your browser. Sign in on the site if required.',
     closeWindow: 'Close',
     windowHint: 'Drag the title bar to move. Resize from any edge.',
+    footerVersion: 'Version {v}',
+    footerVersionTitle: 'Matches the installed package (manifest.json).',
     brandFooterAria: 'AI4Context — open website',
     brandByPrefix: 'by',
   },
@@ -52,6 +56,23 @@ function applyTranslations() {
   const byPrefix = document.getElementById('a4c-brand-by-prefix');
   if (byPrefix) byPrefix.textContent = t.brandByPrefix;
   if (languageSelect) languageSelect.setAttribute('aria-label', t.language);
+  setExtensionVersionLabel();
+}
+
+function setExtensionVersionLabel() {
+  const verEl = document.getElementById('extensionVersion');
+  if (!verEl || typeof chrome === 'undefined' || !chrome.runtime?.getManifest) return;
+  const t = TRANSLATIONS[currentLang];
+  try {
+    const v = chrome.runtime.getManifest().version;
+    if (v) {
+      verEl.textContent = t.footerVersion.replace('{v}', v);
+      verEl.title = t.footerVersionTitle;
+    }
+  } catch {
+    verEl.textContent = '';
+    verEl.removeAttribute('title');
+  }
 }
 
 /**
@@ -112,15 +133,6 @@ async function changeLanguage(lang) {
 async function init() {
   if (btnClose) {
     btnClose.addEventListener('click', () => window.close());
-  }
-
-  const verEl = document.getElementById('extensionVersion');
-  if (verEl) {
-    try {
-      verEl.textContent = `v${chrome.runtime.getManifest().version}`;
-    } catch {
-      verEl.textContent = '';
-    }
   }
 
   const { 'find-my-phone-language': lang, 'find-my-phone-platform': saved } =

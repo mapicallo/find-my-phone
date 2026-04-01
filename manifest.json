@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Find my phone",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "One click to open Find My Device (Android) or Find My iPhone and locate, ring, lock, or erase your phone when you can't find it.",
   "permissions": ["storage", "windows"],
   "background": {
