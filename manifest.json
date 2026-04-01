@@ -1,12 +1,14 @@
 {
   "manifest_version": 3,
   "name": "Find my phone",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "One click to open Find My Device (Android) or Find My iPhone and locate, ring, lock, or erase your phone when you can't find it.",
-  "permissions": ["storage"],
+  "permissions": ["storage", "windows"],
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
-    "default_popup": "popup.html",
-    "default_title": "Find my phone",
+    "default_title": "Find my phone — open floating panel",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",

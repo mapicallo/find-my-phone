@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find my phone</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body class="panel-body">
+  <div class="container">
+    <div class="window-toolbar">
+      <button type="button" id="btnClose" class="btn-close" data-i18n="closeWindow">Close</button>
+    </div>
+
+    <header>
+      <div class="header-row">
+        <div>
+          <h1 data-i18n="title">Localizar mi móvil</h1>
+          <p class="subtitle" data-i18n="subtitle">¿No encuentras tu teléfono? Hazlo sonar con un clic.</p>
+        </div>
+        <div class="language-selector">
+          <label for="languageSelect" class="language-label" data-i18n="language">Idioma</label>
+          <select id="languageSelect" aria-label="Idioma">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div id="quick-open" class="quick-open" style="display: none;">
+        <button type="button" id="btn-quick" class="btn btn-quick">
+          <span class="btn-icon" aria-hidden="true">📍</span>
+          <span class="btn-label" data-i18n="locateNow">Localizar ahora</span>
+        </button>
+      </div>
+      <div class="buttons">
+        <button type="button" id="btn-android" class="btn btn-android">
+          <span class="btn-icon" aria-hidden="true">🤖</span>
+          <span class="btn-label">Android</span>
+          <span class="btn-hint">Find My Device</span>
+        </button>
+        <button type="button" id="btn-iphone" class="btn btn-iphone">
+          <span class="btn-icon" aria-hidden="true">🍎</span>
+          <span class="btn-label">iPhone</span>
+          <span class="btn-hint">Find My iPhone</span>
+        </button>
+      </div>
+
+      <div class="remember">
+        <label>
+          <input type="checkbox" id="rememberPlatform" />
+          <span data-i18n="rememberPlatform">Recordar mi plataforma</span>
+        </label>
+      </div>
+    </main>
+
+    <footer class="panel-footer">
+      <p class="note" data-i18n="note">Se abrirá en una pestaña del navegador. Inicia sesión si es necesario.</p>
+      <p class="window-hint" id="window-hint" data-i18n="windowHint"></p>
+      <p class="extension-version" id="extensionVersion"></p>
+      <a
+        class="a4c-brand-footer a4c-brand-footer--strip"
+        id="a4c-brand-footer"
+        href="https://ai4context.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="a4c-brand-footer__accent" aria-hidden="true"></span>
+        <img
+          class="a4c-brand-footer__mark"
+          src="brand/mark-ai4context.png"
+          width="22"
+          height="22"
+          alt=""
+          decoding="async"
+        />
+        <span class="a4c-brand-footer__copy">
+          <span class="a4c-brand-footer__by"><span id="a4c-brand-by-prefix">by</span></span>
+          <strong class="a4c-brand-footer__name">AI4Context</strong>
+        </span>
+      </a>
+    </footer>
+  </div>
+  <script src="panel.js"></script>
+</body>
+</html>
