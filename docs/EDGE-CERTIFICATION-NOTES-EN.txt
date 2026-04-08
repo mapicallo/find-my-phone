@@ -1,0 +1,19 @@
+Find my phone — certification notes (English, paste into Partner Center)
+
+GENERAL
+Find my phone is a Manifest V3 extension. It does not require login to our service and has no backend. A single click opens the Microsoft Edge toolbar action, which opens or focuses a floating panel. From the panel the user chooses Google Find My Device (Android) or Apple iCloud Find (iPhone). The extension opens the official provider URLs in a popup window. The user signs in on Google or Apple as they normally would. No test accounts are provided by the publisher.
+
+HOW TO TEST
+1) Install the package and pin the extension if needed.
+2) Click the toolbar icon. A floating, movable panel appears with Android / iPhone buttons and an optional language selector (English / Spanish).
+3) Tap Android or iPhone. A popup window opens with the official Google or Apple locator URL. Sign in with your own Google or Apple account if prompted to verify ring/locate flows.
+4) Optional: enable "Remember my platform" and use the one-click shortcut on a later visit.
+
+PERMISSIONS
+• storage — Persists UI language and optional "remember platform" choice only (chrome.storage.local).
+• windows — Opens or reuses the floating panel window (chrome.windows).
+
+DATA / PRIVACY
+No analytics and no accounts with the publisher. The extension does not read page content or access credentials; authentication happens only on Google or Apple sites.
+
+If anything is unclear, we can provide additional detail via Partner Center messages.
