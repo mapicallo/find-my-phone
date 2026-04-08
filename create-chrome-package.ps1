@@ -26,7 +26,7 @@ $items = @(
   'icons'
 )
 
-$destName = "find-my-phone-$version.zip"
+$destName = "find-my-phone-v$version-store.zip"
 $dest = Join-Path $Root $destName
 if (Test-Path $dest) { Remove-Item -LiteralPath $dest -Force }
 

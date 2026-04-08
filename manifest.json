@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Find my phone",
-  "version": "1.1.1",
-  "description": "One click to open Find My Device (Android) or Find My iPhone and locate, ring, lock, or erase your phone when you can't find it.",
+  "version": "1.1.2",
+  "description": "Toolbar shortcut: one click to open official Google Find My Device (Android) or Apple iCloud Find (iPhone); sign in there to ring, locate, lock, or erase. Optional remember Android/iPhone. EN/ES UI. Floating panel. No third-party tracker—only Google's and Apple's pages.",
   "permissions": ["storage", "windows"],
   "background": {
     "service_worker": "background.js"

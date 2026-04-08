@@ -2,6 +2,8 @@
 
 Material preparado para publicar **Localizar mi móvil** en la Chrome Web Store.
 
+**Workspace:** `C:\code\find-my-phone\`. **Edge (política 1.1.2 — propuesta de valor):** [`EDGE-PARTNER-CENTER-RESUBMIT-EN.md`](EDGE-PARTNER-CENTER-RESUBMIT-EN.md).
+
 ---
 
 ## 1. Política de privacidad (URL requerida)

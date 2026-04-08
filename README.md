@@ -1,5 +1,7 @@
 # Find my phone
 
+**Workspace local:** `C:\code\find-my-phone\` (repo autoritativo; no duplicar en otros árboles).
+
 Browser extension to locate your phone with one click. Can't find your phone? Open Find My Device (Android) or Find My iPhone directly from the toolbar.
 
 ## Installation
