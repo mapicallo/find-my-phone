@@ -73,12 +73,16 @@ Acceso desde la barra de Edge a las páginas oficiales de Google (Find My Device
 
 ---
 
-## Optional: manifest `description` (aligns with Edge package metadata)
+## `manifest.json` — campo `description` (obligatorio)
 
-Suggested single-line (fits typical Web Store limits):
+**Microsoft Edge** valida `description` con un **máximo de 132 caracteres** (si superas ese límite, el ZIP falla con error de esquema JSON).
+
+Texto actual (131 caracteres) — mantener al cambiar el manifiesto:
 
 ```
-Toolbar shortcut: one click to open official Google Find My Device (Android) or Apple iCloud Find (iPhone); sign in there as usual. Remembers Android/iPhone if you want. EN/ES. No third-party tracking.
+Open Google Find My Device or Apple iCloud Find from Edge in one click. Sign in on Google/Apple. EN/ES. Remembers platform locally.
 ```
 
-After editing `manifest.json`, rebuild the ZIP for Edge and resubmit.
+La descripción **larga** de la tienda (Partner Center) puede ser mucho más extensa; el límite de 132 aplica solo al **`description` del paquete**.
+
+Tras editar `manifest.json`, ejecuta `.\create-chrome-package.ps1` y sube el nuevo ZIP.

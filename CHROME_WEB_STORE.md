@@ -4,6 +4,8 @@ Material preparado para publicar **Localizar mi móvil** en la Chrome Web Store.
 
 **Workspace:** `C:\code\find-my-phone\`. **Edge (política 1.1.2 — propuesta de valor):** [`EDGE-PARTNER-CENTER-RESUBMIT-EN.md`](EDGE-PARTNER-CENTER-RESUBMIT-EN.md).
 
+**Importante:** en `manifest.json`, el campo **`description` no puede superar 132 caracteres** (Edge rechaza el ZIP si lo hace). El texto largo va en la ficha de la tienda, no en el manifiesto.
+
 ---
 
 ## 1. Política de privacidad (URL requerida)
