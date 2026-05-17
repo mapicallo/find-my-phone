@@ -1,5 +1,7 @@
 # Edge Add-ons — resubmit after policy 1.1.2 (“value proposition not clear”)
 
+**v1.1.5 change:** Panel UI now shows an on-screen disclaimer (blue banner) and copy no longer implies the extension rings or tracks the phone by itself. **Update store screenshots** after building 1.1.5 so they match the new panel.
+
 **Workspace:** trabaja siempre en `C:\code\find-my-phone\` (repo `mapicallo/find-my-phone`). No mantener una copia paralela en otros monorepos para evitar versiones divergentes.
 
 Microsoft wants the listing to state **who this is for**, **what exact problem it solves**, and **why this extension** (vs. only opening the sites manually). Use the blocks below in **Partner Center → Store listing → English** (and Spanish if you have a second listing).
@@ -77,10 +79,10 @@ Acceso desde la barra de Edge a las páginas oficiales de Google (Find My Device
 
 **Microsoft Edge** valida `description` con un **máximo de 132 caracteres** (si superas ese límite, el ZIP falla con error de esquema JSON).
 
-Texto actual (131 caracteres) — mantener al cambiar el manifiesto:
+Texto actual en `manifest.json` (v1.1.5, ≤132 caracteres):
 
 ```
-Open Google Find My Device or Apple iCloud Find from Edge in one click. Sign in on Google/Apple. EN/ES. Remembers platform locally.
+Toolbar shortcut only: opens official Google Find My Device or Apple iCloud Find. Sign in on their sites. EN/ES. No tracking.
 ```
 
 La descripción **larga** de la tienda (Partner Center) puede ser mucho más extensa; el límite de 132 aplica solo al **`description` del paquete**.

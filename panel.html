@@ -8,15 +8,11 @@
 </head>
 <body class="panel-body">
   <div class="container">
-    <div class="window-toolbar">
-      <button type="button" id="btnClose" class="btn-close" data-i18n="closeWindow">Close</button>
-    </div>
-
     <header>
       <div class="header-row">
         <div>
           <h1 data-i18n="title">Localizar mi móvil</h1>
-          <p class="subtitle" data-i18n="subtitle">¿No encuentras tu teléfono? Hazlo sonar con un clic.</p>
+          <p class="subtitle" data-i18n="subtitle">Atajo en Edge a las páginas oficiales de Google o Apple.</p>
         </div>
         <div class="language-selector">
           <label for="languageSelect" class="language-label" data-i18n="language">Idioma</label>
@@ -29,6 +25,10 @@
     </header>
 
     <main>
+      <p class="value-banner" data-i18n="valueBanner" role="note">
+        Solo abre las webs oficiales de localización. Tú inicias sesión en Google o Apple para localizar, hacer sonar, bloquear o borrar.
+      </p>
+
       <div id="quick-open" class="quick-open" style="display: none;">
         <button type="button" id="btn-quick" class="btn btn-quick">
           <span class="btn-icon" aria-hidden="true">📍</span>
@@ -39,12 +39,12 @@
         <button type="button" id="btn-android" class="btn btn-android">
           <span class="btn-icon" aria-hidden="true">🤖</span>
           <span class="btn-label">Android</span>
-          <span class="btn-hint">Find My Device</span>
+          <span class="btn-hint" data-i18n="androidHint">Sitio oficial de Google</span>
         </button>
         <button type="button" id="btn-iphone" class="btn btn-iphone">
           <span class="btn-icon" aria-hidden="true">🍎</span>
           <span class="btn-label">iPhone</span>
-          <span class="btn-hint">Find My iPhone</span>
+          <span class="btn-hint" data-i18n="iphoneHint">Sitio oficial de Apple</span>
         </button>
       </div>
 
@@ -58,15 +58,8 @@
 
     <footer class="panel-footer">
       <p class="note" data-i18n="note">Se abrirá en una pestaña del navegador. Inicia sesión si es necesario.</p>
-      <p class="window-hint" id="window-hint" data-i18n="windowHint"></p>
       <p class="extension-version" id="extensionVersion"></p>
-      <a
-        class="a4c-brand-footer a4c-brand-footer--strip"
-        id="a4c-brand-footer"
-        href="https://ai4context.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <div class="a4c-brand-footer a4c-brand-footer--strip">
         <span class="a4c-brand-footer__accent" aria-hidden="true"></span>
         <img
           class="a4c-brand-footer__mark"
@@ -78,9 +71,23 @@
         />
         <span class="a4c-brand-footer__copy">
           <span class="a4c-brand-footer__by"><span id="a4c-brand-by-prefix">by</span></span>
-          <strong class="a4c-brand-footer__name">AI4Context</strong>
+          <a
+            class="a4c-brand-footer__name"
+            id="a4c-brand-footer"
+            href="https://ai4context.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >AI4Context</a>
+          <span class="a4c-brand-footer__separator" aria-hidden="true">|</span>
+          <a
+            class="a4c-brand-footer__support"
+            id="a4c-support-link"
+            href="https://ai4context.com/mission-support"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Support</a>
         </span>
-      </a>
+      </div>
     </footer>
   </div>
   <script src="panel.js"></script>

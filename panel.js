@@ -6,31 +6,39 @@ const URLS = {
 const TRANSLATIONS = {
   es: {
     title: 'Localizar mi móvil',
-    subtitle: '¿No encuentras tu teléfono? Hazlo sonar con un clic.',
+    subtitle: 'Atajo en Edge a las páginas oficiales de Google o Apple.',
+    valueBanner:
+      'Esta extensión no rastrea tu móvil: solo abre google.com/android/find o icloud.com/find. Localizar, hacer sonar, bloquear o borrar lo haces tú en Google o Apple tras iniciar sesión.',
     language: 'Idioma',
-    locateNow: 'Localizar ahora',
+    locateNow: 'Abrir sitio oficial',
+    androidHint: 'Sitio oficial de Google',
+    iphoneHint: 'Sitio oficial de Apple',
     rememberPlatform: 'Recordar mi plataforma',
-    note: 'Se abrirá una pestaña en el navegador. Inicia sesión en el sitio si es necesario.',
-    closeWindow: 'Cerrar',
-    windowHint: 'Arrastra la barra de título para mover. Redimensiona desde cualquier borde.',
+    note: 'No es un rastreador de terceros. Sin servidores del editor: solo se abre la web oficial en una pestaña.',
     footerVersion: 'Versión {v}',
     footerVersionTitle: 'Coincide con el paquete instalado (manifest.json).',
     brandFooterAria: 'AI4Context — abrir sitio web',
+    supportFooterAria: 'Apoyar AI4Context',
     brandByPrefix: 'por',
+    supportFooterText: 'Apoyar',
   },
   en: {
     title: 'Find my phone',
-    subtitle: "Can't find your phone? Make it ring with one click.",
+    subtitle: 'Edge shortcut to official Google or Apple locate pages.',
+    valueBanner:
+      'This extension does not track your phone—it only opens google.com/android/find or icloud.com/find. Ring, locate, lock, or erase on Google or Apple after you sign in there.',
     language: 'Language',
-    locateNow: 'Locate now',
+    locateNow: 'Open official site',
+    androidHint: 'Official Google site',
+    iphoneHint: 'Official Apple site',
     rememberPlatform: 'Remember my platform',
-    note: 'Opens a tab in your browser. Sign in on the site if required.',
-    closeWindow: 'Close',
-    windowHint: 'Drag the title bar to move. Resize from any edge.',
+    note: 'Not a third-party tracker. No publisher servers—only the official site opens in a browser tab.',
     footerVersion: 'Version {v}',
     footerVersionTitle: 'Matches the installed package (manifest.json).',
     brandFooterAria: 'AI4Context — open website',
+    supportFooterAria: 'Support AI4Context',
     brandByPrefix: 'by',
+    supportFooterText: 'Support',
   },
 };
 
@@ -40,7 +48,6 @@ const btnQuick = document.getElementById('btn-quick');
 const quickOpen = document.getElementById('quick-open');
 const rememberCheckbox = document.getElementById('rememberPlatform');
 const languageSelect = document.getElementById('languageSelect');
-const btnClose = document.getElementById('btnClose');
 
 let currentLang = 'es';
 
@@ -53,6 +60,11 @@ function applyTranslations() {
   document.documentElement.lang = currentLang === 'es' ? 'es' : 'en';
   const brandFooter = document.getElementById('a4c-brand-footer');
   if (brandFooter) brandFooter.setAttribute('aria-label', t.brandFooterAria);
+  const supportFooter = document.getElementById('a4c-support-link');
+  if (supportFooter) {
+    supportFooter.textContent = t.supportFooterText;
+    supportFooter.setAttribute('aria-label', t.supportFooterAria);
+  }
   const byPrefix = document.getElementById('a4c-brand-by-prefix');
   if (byPrefix) byPrefix.textContent = t.brandByPrefix;
   if (languageSelect) languageSelect.setAttribute('aria-label', t.language);
@@ -131,10 +143,6 @@ async function changeLanguage(lang) {
 }
 
 async function init() {
-  if (btnClose) {
-    btnClose.addEventListener('click', () => window.close());
-  }
-
   const { 'find-my-phone-language': lang, 'find-my-phone-platform': saved } =
     await chrome.storage.local.get(['find-my-phone-language', 'find-my-phone-platform']);
   if (lang && TRANSLATIONS[lang]) {

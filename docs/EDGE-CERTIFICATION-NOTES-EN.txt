@@ -1,19 +1,26 @@
 Find my phone — certification notes (English, paste into Partner Center)
 
-GENERAL
-Find my phone is a Manifest V3 extension. It does not require login to our service and has no backend. A single click opens the Microsoft Edge toolbar action, which opens or focuses a floating panel. From the panel the user chooses Google Find My Device (Android) or Apple iCloud Find (iPhone). The extension opens the official provider URLs in a popup window. The user signs in on Google or Apple as they normally would. No test accounts are provided by the publisher.
+PRODUCT PURPOSE (policy 1.1.2)
+This is NOT a phone tracker. It is a single-purpose Microsoft Edge toolbar shortcut that opens ONLY:
+• https://www.google.com/android/find/ (Google Find My Device, Android)
+• https://www.icloud.com/find/ (Apple iCloud Find, iPhone)
+Ring, locate, lock, and erase happen only after the user signs in on Google or Apple. The publisher provides no maps, no location backend, and no accounts.
+
+UI CLARITY (v1.1.5+)
+The floating panel shows a blue information banner stating the extension does not track the phone and only opens those official URLs. Buttons are labeled as shortcuts to the official Google or Apple site. We do not supply Google/Apple test accounts; reviewers may stop after confirming the correct official page opens, or use their own accounts.
 
 HOW TO TEST
 1) Install the package and pin the extension if needed.
-2) Click the toolbar icon. A floating, movable panel appears with Android / iPhone buttons and an optional language selector (English / Spanish).
-3) Tap Android or iPhone. A popup window opens with the official Google or Apple locator URL. Sign in with your own Google or Apple account if prompted to verify ring/locate flows.
-4) Optional: enable "Remember my platform" and use the one-click shortcut on a later visit.
+2) Click the toolbar icon. A floating panel opens with the disclaimer banner, Android / iPhone buttons, and language (English / Spanish).
+3) Click Android or iPhone. A browser tab opens with the official locator URL (panel stays available). Sign in with your own Google or Apple account if you want to verify ring/locate flows.
+4) Optional: enable "Remember my platform" and use "Open official site" on a later visit.
 
 PERMISSIONS
-• storage — Persists UI language and optional "remember platform" choice only (chrome.storage.local).
-• windows — Opens or reuses the floating panel window (chrome.windows).
+• storage — UI language and optional "remember platform" only (chrome.storage.local).
+• windows — Opens/focuses the floating panel window (chrome.windows).
 
 DATA / PRIVACY
-No analytics and no accounts with the publisher. The extension does not read page content or access credentials; authentication happens only on Google or Apple sites.
+No publisher backend, no analytics. The extension does not read page content or harvest credentials.
 
-If anything is unclear, we can provide additional detail via Partner Center messages.
+STORE LISTING
+Description and screenshots should match the panel: shortcut to official vendor pages only, not a third-party tracker.

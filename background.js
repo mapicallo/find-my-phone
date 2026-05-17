@@ -20,8 +20,8 @@ async function openOrFocusPanel() {
   await chrome.windows.create({
     url,
     type: 'popup',
-    width: 360,
-    height: 520,
+    width: 380,
+    height: 580,
     focused: true,
   });
 }
