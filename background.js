@@ -21,7 +21,7 @@ async function openOrFocusPanel() {
     url,
     type: 'popup',
     width: 380,
-    height: 580,
+    height: 600,
     focused: true,
   });
 }

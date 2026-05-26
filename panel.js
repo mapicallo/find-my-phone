@@ -6,9 +6,12 @@ const URLS = {
 const TRANSLATIONS = {
   es: {
     title: 'Localizar mi móvil',
+    purposeLine: 'Un solo propósito: atajo a la web oficial de localización (no es un rastreador).',
     subtitle: 'Atajo en Edge a las páginas oficiales de Google o Apple.',
     valueBanner:
-      'Esta extensión no rastrea tu móvil: solo abre google.com/android/find o icloud.com/find. Localizar, hacer sonar, bloquear o borrar lo haces tú en Google o Apple tras iniciar sesión.',
+      'Esta extensión no rastrea tu móvil: solo abre las URLs oficiales que indican los botones. Localizar, hacer sonar, bloquear o borrar lo haces tú en Google o Apple tras iniciar sesión.',
+    urlAndroid: 'google.com/android/find',
+    urlIphone: 'icloud.com/find',
     language: 'Idioma',
     locateNow: 'Abrir sitio oficial',
     androidHint: 'Sitio oficial de Google',
@@ -24,9 +27,12 @@ const TRANSLATIONS = {
   },
   en: {
     title: 'Find my phone',
+    purposeLine: 'Single purpose: shortcut to the official locate website (not a phone tracker).',
     subtitle: 'Edge shortcut to official Google or Apple locate pages.',
     valueBanner:
-      'This extension does not track your phone—it only opens google.com/android/find or icloud.com/find. Ring, locate, lock, or erase on Google or Apple after you sign in there.',
+      'This extension does not track your phone—it only opens the official URLs shown on the buttons below. Ring, locate, lock, or erase on Google or Apple after you sign in there.',
+    urlAndroid: 'google.com/android/find',
+    urlIphone: 'icloud.com/find',
     language: 'Language',
     locateNow: 'Open official site',
     androidHint: 'Official Google site',
@@ -49,7 +55,11 @@ const quickOpen = document.getElementById('quick-open');
 const rememberCheckbox = document.getElementById('rememberPlatform');
 const languageSelect = document.getElementById('languageSelect');
 
-let currentLang = 'es';
+/** Default UI language: stored preference, else match browser (Edge reviewers often use en-US). */
+let currentLang =
+  typeof navigator !== 'undefined' && navigator.language?.toLowerCase().startsWith('es')
+    ? 'es'
+    : 'en';
 
 function applyTranslations() {
   const t = TRANSLATIONS[currentLang];

@@ -12,6 +12,7 @@
       <div class="header-row">
         <div>
           <h1 data-i18n="title">Localizar mi móvil</h1>
+          <p class="purpose-line" data-i18n="purposeLine">Un solo propósito: atajo a la web oficial de localización (no es un rastreador).</p>
           <p class="subtitle" data-i18n="subtitle">Atajo en Edge a las páginas oficiales de Google o Apple.</p>
         </div>
         <div class="language-selector">
@@ -39,12 +40,18 @@
         <button type="button" id="btn-android" class="btn btn-android">
           <span class="btn-icon" aria-hidden="true">🤖</span>
           <span class="btn-label">Android</span>
-          <span class="btn-hint" data-i18n="androidHint">Sitio oficial de Google</span>
+          <span class="btn-hint">
+            <span data-i18n="androidHint">Sitio oficial de Google</span>
+            <span class="btn-url" data-i18n="urlAndroid">google.com/android/find</span>
+          </span>
         </button>
         <button type="button" id="btn-iphone" class="btn btn-iphone">
           <span class="btn-icon" aria-hidden="true">🍎</span>
           <span class="btn-label">iPhone</span>
-          <span class="btn-hint" data-i18n="iphoneHint">Sitio oficial de Apple</span>
+          <span class="btn-hint">
+            <span data-i18n="iphoneHint">Sitio oficial de Apple</span>
+            <span class="btn-url" data-i18n="urlIphone">icloud.com/find</span>
+          </span>
         </button>
       </div>
 
